@@ -1,0 +1,40 @@
+{"participants": [
+    {
+        "gender": "d",
+        "name": "Matthias",
+        "decisions": [
+            [
+                true,
+                true
+            ],
+            [
+                false,
+                false
+            ],
+            [
+                true,
+                true
+            ]
+        ],
+        "age": 20
+    },
+    {
+        "gender": "d",
+        "name": "David",
+        "decisions": [
+            [
+                false,
+                false
+            ],
+            [
+                true,
+                true
+            ],
+            [
+                false,
+                false
+            ]
+        ],
+        "age": 14
+    }
+]}

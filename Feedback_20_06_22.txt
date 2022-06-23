@@ -1,0 +1,18 @@
+PTIIS Notes 20.06
+
+Explain the points in the task description.
+How do you explain the trustworthiness or uncertainty that the AI might cheat?
+
+Go back to the original version of the prisoners dilemma.
+
+Get the story of the manufacturing systems straight.
+
+Change from score to something with a reward.
+
+Leaderboard, worker of the month, ...
+
+write a consent form, ask people about (gender, age, ??)
+
+voluntary participation, inform about goals and means of the study, 
+
+questionnaire after each condition (can be separate from the study setup)

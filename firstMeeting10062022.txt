@@ -1,0 +1,28 @@
+Trust Theory
+
+Try to measure how trust builds.
+For example: 
+How much does the bids rise with each succesfull cooperation?
+How much time is the person spending on pondering wether to trust the AI or not?
+What is the impact of the AI cheating and how long does it take to recover trust?
+What happens if another AI player is taking over after the first one cheated?
+-> Is the trust reset or is the human player now mor distrusting?
+
+Questions:
+How can the design be changed to give the human more knowledge?
+ 
+
+Identify a Research Question!
+-> We have an exception (trust is lost after betrayal) Hypothesis
+-> What part of the design is responsible
+	-> What would be the message to betray the trust to test
+
+-> Which kind of message would help to rebuild the trust
+-> Will the precentage help the human to trust more or less
+-> Change the communication in between participants to see how trust builds differently
+-> Probably run the study online, otherwise room can be rent as well
+-> Follow the instructions given for the presentation
+-> ~5-10 people
+-> make sure to see the other person!
+-> see that the person is not disturbed to reduce external bias
+-> send message to other tutor to get a standard questionnaire
