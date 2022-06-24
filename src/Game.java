@@ -90,25 +90,44 @@ public class Game {
             ASCIIArtGenerator.ASCIIArtFont.ART_FONT_MONO, "@");
     System.out.println();
 
-    System.out.print("Default text to explain the game!\n");
+    System.out.println("====================== THE GAME ======================");
+    System.out.print("In this study, you will be asked to play a game against an AI.\n" +
+            "The game consists of 3 matches with a varying number of rounds each.\n" +
+            "In each round, you will have the option to either play fair or to cheat. The AI will have the same choice.\n" +
+            "After you and the AI have made your decisions, points will be distributed according to the following schema:\n" +
+            "\n" +
+            "+-----------------+-----------------+-----------------+\n" +
+            "|                 |     AI FAIR     |    AI CHEATS    |\n" +
+            "+-----------------+-----------------+-----------------+\n" +
+            "|    YOU FAIR     |  You: 2; AI: 2  | You: -1; AI: 3  |\n" +
+            "+-----------------+-----------------+-----------------+\n" +
+            "|    YOU CHEAT    | You: 3; AI: -1  |  You: 0; AI: 0  |\n" +
+            "+-----------------+-----------------+-----------------+\n" +
+            "\n" +
+            "Each match, you will be playing against a different AI opponent with a unique playing style.\n" +
+            "Your goal is to maximize your own score.\n");
+    System.out.println("Press ENTER to continue.");
+    scanner.nextLine();
   }
 
   public void obtainPersonData() {
 
-    System.out.println("Default text to prompt for personal details!");
-    System.out.println("Please enter your player name:");
+    System.out.println("================== DEMOGRAPHIC DATA ==================");
+    System.out.println("We are going to ask you for your player name, your age and your gender. You are free to choose" +
+            " any combination of letters as your player name if you would prefer to remain anonymous.");
+    System.out.print("Please enter your player name: ");
     String name = scanner.nextLine();
-    System.out.println(name);
+    System.out.println(String.format("Hello, %s!", name));
 
-    System.out.println("Please enter your age:");
+    System.out.print("Please enter your age: ");
     int age = Integer.valueOf(scanner.nextLine());
 
-    System.out.println("Please enter your gender (m/f/d):");
+    System.out.print("Please enter your gender (m/f/d): ");
     String gender = scanner.nextLine();
     while (! (gender.equals("m") || gender.equals("f") || gender.equals("d"))) {
       System.out.print(String.format("Unsupported letter %s. Please only use m, f or d)\n",
               gender));
-      System.out.println("Please enter your gender (m/f/d):");
+      System.out.print("Please enter your gender (m/f/d): ");
       gender = scanner.nextLine();
     }
     participant.setAge(age);
@@ -122,16 +141,18 @@ public class Game {
     boolean aiMove;
     int condition = participant.getNextCondition();
 
-    System.out.print("Are you ready to play the game? (y/n)\n");
+    String firstOrNextString = participant.getMatchCounter() == 0 ? "first" : "next";
+    System.out.print(String.format("Are you ready to start the %s match? (y/n)\n", firstOrNextString));
     while(! (scanner.nextLine().equals("y"))) {
-      System.out.print("Are you ready to play the game? (y/n)\n");
+      System.out.print(String.format("Are you ready to start the %s match? (y/n)\n", firstOrNextString));
     }
 
-    System.out.println(String.format("Welcome %s to match %d", participant.getName(),
-            participant.getMatchCounter()));
+    System.out.println(String.format("====================== MATCH %d ======================",
+            participant.getMatchCounter() + 1));
 
     for (int roundCounter = 0; roundCounter < numberOfRounds[condition]; roundCounter++) {
-      System.out.println("Do you want to play fair (f) or cheat (c)?");
+      System.out.println(String.format("Round %d.%d - Do you want to play fair (f) or cheat (c)?",
+              participant.getMatchCounter() + 1, roundCounter + 1));
       previousPlayerMove = playerMove;
       playerMove = scanner.nextLine().equals("f");
 
@@ -156,19 +177,22 @@ public class Game {
       if (playerMove && aiMove){
         participant.increaseScore(2);
         aiScore += 2;
-        System.out.println("Both parties played fair.");
+        System.out.println("You and the AI both played fair.");
       } else if (playerMove) {
         aiScore += 3;
-        System.out.println("The AI cheated.");
+        System.out.println("You played fair and the AI cheated.");
       } else if (aiMove) {
         participant.increaseScore(3);
-        System.out.println("The AI played fair.");
+        System.out.println("You cheated and the AI played fair.");
       } else {
-        System.out.println("Both cheated.");
+        System.out.println("You and the AI both cheated.");
       }
       participant.addDecision(playerMove);
-      System.out.println(String.format("The new scores are:\n Human: %d     AI: %d",
-              participant.getScore(), aiScore));
+      System.out.println(String.format("The new scores are:\n%s: %d     AI: %d",
+              participant.getName(), participant.getScore(), aiScore));
+
+      System.out.println("Press ENTER to continue.");
+      scanner.nextLine();
     }
 
     if (participant.getScore() > aiScore) {
