@@ -23,8 +23,8 @@ public class Game {
           3, new Integer[]{1, 2,0},
           4, new Integer[]{2, 0,1},
           5, new Integer[]{2, 1,0}
-          );
-  int[] numberOfRounds = new int[]{2,2,2};
+  );
+  int[] numberOfRounds = new int[]{10,9,8};
 
 
   public static void main(String[] args) throws Exception {
@@ -68,7 +68,6 @@ public class Game {
     if (f.exists() && (f.length() > 2)) {
       InputStream is = new FileInputStream("database.json");
       String jsonTxt = IOUtils.toString(is, "UTF-8");
-      System.out.println(jsonTxt);
       database = new JSONObject(jsonTxt);
       participantsJSON = database.getJSONArray("participants");
 
@@ -99,15 +98,18 @@ public class Game {
             "+-----------------+-----------------+-----------------+\n" +
             "|                 |     AI FAIR     |    AI CHEATS    |\n" +
             "+-----------------+-----------------+-----------------+\n" +
-            "|    YOU FAIR     |  You: 2; AI: 2  | You: -1; AI: 3  |\n" +
+            "|    YOU FAIR     |  You: 2; AI: 2  | You: 0; AI: 3  |\n" +
             "+-----------------+-----------------+-----------------+\n" +
-            "|    YOU CHEAT    | You: 3; AI: -1  |  You: 0; AI: 0  |\n" +
+            "|    YOU CHEAT    | You: 3; AI: 0  |  You: 0; AI: 0  |\n" +
             "+-----------------+-----------------+-----------------+\n" +
             "\n" +
             "Each match, you will be playing against a different AI opponent with a unique playing style.\n" +
             "Your goal is to maximize your own score.\n");
-    System.out.println("Press ENTER to continue.");
-    scanner.nextLine();
+    System.out.println("Press y to continue.");
+    String tmpConfirmation = scanner.nextLine();
+    while (! tmpConfirmation.equals("y")){
+      tmpConfirmation = scanner.nextLine();
+    }
   }
 
   public void obtainPersonData() {
@@ -271,7 +273,7 @@ public class Game {
 
       return json;
     }
-    public int getNextCondition() {return this.conditionOrder.get(matchCounter);}
+    public int getNextCondition() {return this.conditionOrder.get(matchCounter % 6);}
     public void incrementMatchCounter() {this.matchCounter++;}
     public void resetScore() {this.score = 0;}
   }
