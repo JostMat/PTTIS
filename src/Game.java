@@ -98,9 +98,9 @@ public class Game {
             "+-----------------+-----------------+-----------------+\n" +
             "|                 |     AI FAIR     |    AI CHEATS    |\n" +
             "+-----------------+-----------------+-----------------+\n" +
-            "|    YOU FAIR     |  You: 2; AI: 2  | You: 0; AI: 3  |\n" +
+            "|    YOU FAIR     |  You: 2; AI: 2  |  You: 0; AI: 3  |\n" +
             "+-----------------+-----------------+-----------------+\n" +
-            "|    YOU CHEAT    | You: 3; AI: 0  |  You: 0; AI: 0  |\n" +
+            "|    YOU CHEAT    |  You: 3; AI: 0  |  You: 0; AI: 0  |\n" +
             "+-----------------+-----------------+-----------------+\n" +
             "\n" +
             "Each match, you will be playing against a different AI opponent with a unique playing style.\n" +
