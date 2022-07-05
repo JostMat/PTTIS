@@ -1,13 +1,10 @@
 import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.*;
 import org.apache.commons.io.IOUtils;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.json.JSONTokener;
 
 public class Game {
 
@@ -39,6 +36,8 @@ public class Game {
     for (int i = 0; i < 3; i++) {
       game.executeMatch();
     }
+
+    game.printTotalPoints();
 
     game.saveLogToDatabase();
   }
@@ -85,7 +84,7 @@ public class Game {
 
   public void displayIntro() throws Exception {
     System.out.println();
-    artGen.printTextArt("PTIIS Trust Game", ASCIIArtGenerator.ART_SIZE_SMALL,
+    artGen.printTextArt("PTIIS Game", ASCIIArtGenerator.ART_SIZE_SMALL,
             ASCIIArtGenerator.ASCIIArtFont.ART_FONT_MONO, "@");
     System.out.println();
 
@@ -104,8 +103,8 @@ public class Game {
             "+-----------------+-----------------+-----------------+\n" +
             "\n" +
             "Each match, you will be playing against a different AI opponent with a unique playing style.\n" +
-            "Your goal is to maximize your own score.\n");
-    System.out.println("Press y to continue.");
+            "Your goal is to get more points than the AI.\n");
+    System.out.println("Enter y to continue.");
     String tmpConfirmation = scanner.nextLine();
     while (! tmpConfirmation.equals("y")){
       tmpConfirmation = scanner.nextLine();
@@ -177,27 +176,27 @@ public class Game {
 
       //compute the result
       if (playerMove && aiMove){
-        participant.increaseScore(2);
+        participant.increaseMatchScore(2);
         aiScore += 2;
         System.out.println("You and the AI both played fair.");
       } else if (playerMove) {
         aiScore += 3;
         System.out.println("You played fair and the AI cheated.");
       } else if (aiMove) {
-        participant.increaseScore(3);
+        participant.increaseMatchScore(3);
         System.out.println("You cheated and the AI played fair.");
       } else {
         System.out.println("You and the AI both cheated.");
       }
       participant.addDecision(playerMove);
       System.out.println(String.format("The new scores are:\n%s: %d     AI: %d",
-              participant.getName(), participant.getScore(), aiScore));
+              participant.getName(), participant.getMatchScore(), aiScore));
 
       System.out.println("Press ENTER to continue.");
       scanner.nextLine();
     }
 
-    if (participant.getScore() > aiScore) {
+    if (participant.getMatchScore() > aiScore) {
       System.out.println("You won the game!");
     } else {
       System.out.println("You lost the game!");
@@ -208,13 +207,18 @@ public class Game {
     aiScore = 0;
   }
 
+  public void printTotalPoints(){
+    System.out.printf("%nIn total, you have accumulated %s points.%n%n", participant.getTotalScore());
+  }
+
 
   public class Participant {
     int age;
     String gender;
     String name;
     int matchCounter = 0;
-    int score;
+    int matchScore;
+    int totalScore;
     List<List<Boolean>> decisions = new ArrayList<>();
 
     List<Integer> conditionOrder = new ArrayList<Integer>();
@@ -228,7 +232,7 @@ public class Game {
     public void setConditionOrder(List<Integer> conditionOrder) {this.conditionOrder =
             conditionOrder;}
     public int getMatchCounter() {return this.matchCounter;}
-    public void increaseScore(int increaseValue) {this.score += increaseValue;}
+    public void increaseMatchScore(int increaseValue) {this.matchScore += increaseValue;}
     public void addDecision(boolean decision) {this.decisions.get(matchCounter).add(decision);}
 
     public void setAge(int age) {
@@ -245,7 +249,8 @@ public class Game {
 
     public String getName() {return this.name;}
     public int getAge() {return this.age;}
-    public int getScore() {return this.score;}
+    public int getMatchScore() {return this.matchScore;}
+    public int getTotalScore() {return this.totalScore;}
     public String getGender() {return this.gender;}
     public JSONObject createJSONEntry() {
       JSONObject json = new JSONObject();
@@ -275,7 +280,10 @@ public class Game {
     }
     public int getNextCondition() {return this.conditionOrder.get(matchCounter % 6);}
     public void incrementMatchCounter() {this.matchCounter++;}
-    public void resetScore() {this.score = 0;}
+    public void resetScore() {
+      this.totalScore += this.getMatchScore();
+      this.matchScore = 0;
+    }
   }
 
 
