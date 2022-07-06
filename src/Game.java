@@ -13,6 +13,9 @@ public class Game {
   int aiScore = 0;
   Scanner scanner = new Scanner(new InputStreamReader(System.in));
   ASCIIArtGenerator artGen = new ASCIIArtGenerator();
+
+  //Do not change this. And if you really have to...change it in Analysis.java as well since it
+  // unfortunately also depends on this...
   Map<Integer, Integer[]> conditionOrderMap = Map.of(
           0, new Integer[]{0, 1,2},
           1, new Integer[]{0, 2,1},
@@ -21,6 +24,8 @@ public class Game {
           4, new Integer[]{2, 0,1},
           5, new Integer[]{2, 1,0}
   );
+
+  // do not change this, or if you have to also change it in Analysis.java
   int[] numberOfRounds = new int[]{10,9,8};
 
 
@@ -270,7 +275,7 @@ public class Game {
         conditionOrderJSON.put(conditionOrder.get(i));
       }
 
-
+      json.put("conditionOrder", conditionOrder);
       json.put("decisions", decisionsJSON);
       json.put("age", this.age);
       json.put("gender", this.gender);
