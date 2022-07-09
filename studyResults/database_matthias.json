@@ -1,0 +1,267 @@
+{"participants": [
+    {
+        "gender": "m",
+        "conditionOrder": [
+            0,
+            1,
+            2
+        ],
+        "name": "Tyro",
+        "decisions": [
+            [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        ],
+        "age": 25
+    },
+    {
+        "gender": "f",
+        "conditionOrder": [
+            0,
+            2,
+            1
+        ],
+        "name": "Pako",
+        "decisions": [
+            [
+                false,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                false,
+                true
+            ],
+            [
+                true,
+                false,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            [
+                false,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        ],
+        "age": 24
+    },
+    {
+        "gender": "m",
+        "conditionOrder": [
+            1,
+            0,
+            2
+        ],
+        "name": "Tim",
+        "decisions": [
+            [
+                true,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            [
+                true,
+                false,
+                false,
+                true,
+                false,
+                false,
+                false,
+                false
+            ]
+        ],
+        "age": 26
+    },
+    {
+		"gender": "f",
+		"name": "Brei",
+		"decisions": [
+		    [
+		        false,
+		        true,
+		        true,
+		        false,
+		        false,
+		        false,
+		        false,
+		        false
+		    ],
+		    [
+		        true,
+		        false,
+		        false,
+		        false,
+		        false,
+		        false,
+		        false,
+		        false,
+		        false,
+		        false
+		    ],
+		    [
+		        true,
+		        false,
+		        false,
+		        true,
+		        false,
+		        false,
+		        false,
+		        false,
+		        false
+		    ]
+		],
+		"age": 22
+	},
+    {
+        "gender": "m",
+        "conditionOrder": [
+            2,
+            0,
+            1
+        ],
+        "name": "Peter",
+        "decisions": [
+            [
+                false,
+                false,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        ],
+        "age": 32
+    },
+    {
+        "gender": "m",
+        "conditionOrder": [
+            2,
+            1,
+            0
+        ],
+        "name": "lyx",
+        "decisions": [
+            [
+                true,
+                false,
+                false,
+                true,
+                true,
+                false,
+                true,
+                true
+            ],
+            [
+                false,
+                false,
+                true,
+                false,
+                false,
+                false,
+                false,
+                true,
+                false
+            ],
+            [
+                false,
+                false,
+                true,
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+                false
+            ]
+        ],
+        "age": 25
+    }
+]}

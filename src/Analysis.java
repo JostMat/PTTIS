@@ -48,6 +48,11 @@ public class Analysis {
       System.out.println(participants);
     }
 
+    //delete old result statistics
+    FileWriter myWriter = new FileWriter("results.txt", false);
+    myWriter.close();
+
+
     //create result statistic
     analysis.resultAll(participants);
     analysis.resultOrderCondition(participants);
@@ -57,8 +62,18 @@ public class Analysis {
 
   }
 
+
   public void resultOrderCondition(List<Participant> participants) {
     Map<Integer, List<Integer>> ordMapOpp1 = Map.of(
+            0, new ArrayList(Collections.nCopies(10, 0)),
+            1, new ArrayList(Collections.nCopies(10, 0)),
+            2, new ArrayList(Collections.nCopies(10, 0)),
+            3, new ArrayList(Collections.nCopies(10, 0)),
+            4, new ArrayList(Collections.nCopies(10, 0)),
+            5, new ArrayList(Collections.nCopies(10, 0))
+    );
+
+    Map<Integer, List<Integer>> ordMapOpp2 = Map.of(
             0, new ArrayList(Collections.nCopies(9, 0)),
             1, new ArrayList(Collections.nCopies(9, 0)),
             2, new ArrayList(Collections.nCopies(9, 0)),
@@ -67,22 +82,13 @@ public class Analysis {
             5, new ArrayList(Collections.nCopies(9, 0))
     );
 
-    Map<Integer, List<Integer>> ordMapOpp2 = Map.of(
+    Map<Integer, List<Integer>> ordMapOpp3 = Map.of(
             0, new ArrayList(Collections.nCopies(8, 0)),
             1, new ArrayList(Collections.nCopies(8, 0)),
             2, new ArrayList(Collections.nCopies(8, 0)),
             3, new ArrayList(Collections.nCopies(8, 0)),
             4, new ArrayList(Collections.nCopies(8, 0)),
             5, new ArrayList(Collections.nCopies(8, 0))
-    );
-
-    Map<Integer, List<Integer>> ordMapOpp3 = Map.of(
-            0, new ArrayList(Collections.nCopies(7, 0)),
-            1, new ArrayList(Collections.nCopies(7, 0)),
-            2, new ArrayList(Collections.nCopies(7, 0)),
-            3, new ArrayList(Collections.nCopies(7, 0)),
-            4, new ArrayList(Collections.nCopies(7, 0)),
-            5, new ArrayList(Collections.nCopies(7, 0))
     );
 
     for (Participant participant : participants) {
@@ -107,9 +113,12 @@ public class Analysis {
     }
 
     for (int i = 0; i < 6; i++){
-      this.createExcel("conditionOrder " + i + " vs. opponent 1", ordMapOpp1.get(i));
-      this.createExcel("conditionOrder " + i + " vs. opponent 2", ordMapOpp2.get(i));
-      this.createExcel("conditionOrder " + i + " vs. opponent 3", ordMapOpp3.get(i));
+      this.createExcel("conditionOrder " + i + " vs. opponent 1", ordMapOpp1.get(i), false);
+      this.createExcel("conditionOrder " + i + " vs. opponent 2", ordMapOpp2.get(i), true);
+      this.createExcel("conditionOrder " + i + " vs. opponent 3", ordMapOpp3.get(i), true);
+      this.createExcel("half of participants", new ArrayList(Collections.nCopies(10, 2)),
+              true);
+
     }
 
   }
@@ -120,7 +129,10 @@ public class Analysis {
     List<Integer> allOp2 = new ArrayList(Collections.nCopies(9, 0));
     List<Integer> allOp3 = new ArrayList(Collections.nCopies(8, 0));
 
+    int participantID = 0;
     for (Participant participant : participants) {
+      System.out.println(participantID);
+      participantID++;
       for (int decCount = 0; decCount < participant.getDecisionsOp1().size(); decCount++) {
         if (participant.getDecisionsOp1().get(decCount)) {
           allOp1.set(decCount, allOp1.get(decCount) + 1);
@@ -140,9 +152,11 @@ public class Analysis {
       }
     }
 
-    this.createExcel("all vs. opponent 1", allOp1);
-    this.createExcel("all vs. opponent 2", allOp2);
-    this.createExcel("all vs. opponent 3", allOp3);
+    this.createExcel("all vs. opponent 1", allOp1, false);
+    this.createExcel("all vs. opponent 2", allOp2, true);
+    this.createExcel("all vs. opponent 3", allOp3, true);
+    this.createExcel("half of participants", new ArrayList(Collections.nCopies(10, 12)),
+            true);
 
   }
   public class Participant {
@@ -242,16 +256,20 @@ public class Analysis {
     return participants;
   }
 
-  public void createExcel(String title, List<Integer> values) {
+
+  public void createExcel(String title, List<Integer> values, boolean append) {
     try {
       FileWriter myWriter = new FileWriter("results.txt", true);
+      if(!append) {
+        myWriter.write("\n");
+        //start with "categories aka rounds"
 
-      //start with "categories aka rounds"
-      myWriter.write("\t");
-      for (int i = 0; i < values.size(); i++) {
-        myWriter.write("rd " + i + "\t");
+        myWriter.write("\t");
+        for (int i = 0; i < values.size(); i++) {
+          myWriter.write("rd " + (i+1) + "\t");
+        }
+        myWriter.write("\n");
       }
-      myWriter.write("\n");
 
       //now the number of times participants played fair
       myWriter.write(title + "\t");
@@ -259,17 +277,10 @@ public class Analysis {
         myWriter.write(values.get(i) + "\t");
       }
       myWriter.write("\n");
-      myWriter.write("\n");
 
 
 
       myWriter.close();
-
-
-
-
-
-
 
       System.out.println("Successfully wrote to the file.");
     } catch (IOException e) {

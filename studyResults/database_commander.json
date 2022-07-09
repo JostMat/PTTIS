@@ -1,0 +1,242 @@
+{"participants": [
+        {
+        "gender": "m",
+        "name": "HAMMAD",
+        "decisions": [
+            [
+                true,
+                false,
+                true,
+                true,
+                true,
+                true,
+                false,
+                false,
+                true,
+                true
+            ],
+            [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                true,
+                false
+            ],
+            [
+                true,
+                false,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        ],
+        "age": 22
+    },
+    {
+        "gender": "m",
+        "name": "Hamid",
+        "decisions": [
+            [
+                false,
+                true,
+                false,
+                false,
+                true,
+                true,
+                true,
+                false,
+                true,
+                true
+            ],
+            [
+                true,
+                true,
+                false,
+                false,
+                false,
+                true,
+                false,
+                false,
+                false
+            ],
+            [
+                true,
+                false,
+                true,
+                true,
+                true,
+                false,
+                true,
+                false
+            ]
+        ],
+        "age": 27
+    },
+    {
+        "gender": "m",
+        "name": "Umar",
+        "decisions": [
+            [
+                true,
+                true,
+                true,
+                false,
+                true,
+                false,
+                false,
+                false,
+                false
+            ],
+            [
+                false,
+                true,
+                true,
+                false,
+                true,
+                false,
+                false,
+                true,
+                true,
+                false
+            ],
+            [
+                false,
+                false,
+                true,
+                true,
+                false,
+                true,
+                true,
+                false
+            ]
+        ],
+        "age": 25
+    },
+    {
+        "gender": "m",
+        "name": "Muneeb",
+        "decisions": [
+            [
+                true,
+                true,
+                false,
+                false,
+                true,
+                true,
+                false,
+                false,
+                false
+            ],
+            [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                false
+            ]
+        ],
+        "age": 24
+    },
+    {
+        "gender": "m",
+        "name": "Bilal",
+        "decisions": [
+            [
+                true,
+                true,
+                false,
+                true,
+                false,
+                false,
+                true,
+                false
+            ],
+            [
+                false,
+                false,
+                true,
+                false,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            [
+                true,
+                false,
+                false,
+                true,
+                true,
+                false,
+                true,
+                false,
+                true
+            ]
+        ],
+        "age": 24
+    },
+    {
+        "gender": "m",
+        "name": "HAQ",
+        "decisions": [
+            [
+                true,
+                false,
+                true,
+                false,
+                false,
+                false,
+                false,
+                true
+            ],
+            [
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+                false,
+                false,
+                false
+            ],
+            [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                false,
+                true,
+                false
+            ]
+        ],
+        "age": 18
+    }
+]}

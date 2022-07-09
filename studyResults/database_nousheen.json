@@ -1,0 +1,272 @@
+{"participants": [
+{
+        "gender": "m",
+        "conditionOrder": [
+            0,
+            1,
+            2
+        ],
+        "name": "Daniel",
+        "decisions": [
+            [
+                true,
+                true,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                true
+            ],
+            [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        ],
+        "age": 18
+    },
+    {
+        "gender": "m",
+        "conditionOrder": [
+            0,
+            2,
+            1
+        ],
+        "name": "Omer",
+        "decisions": [
+            [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        ],
+        "age": 23
+    },
+    {
+        "gender": "m",
+        "conditionOrder": [
+            1,
+            0,
+            2
+        ],
+        "name": "Asim",
+        "decisions": [
+            [
+                true,
+                true,
+                false,
+                false,
+                true,
+                true,
+                false,
+                false,
+                false
+            ],
+            [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                false,
+                true,
+                false,
+                true
+            ],
+            [
+                true,
+                true,
+                true,
+                false,
+                true,
+                true,
+                false,
+                true
+            ]
+        ],
+        "age": 26
+    },
+    {
+        "gender": "m",
+        "conditionOrder": [
+            1,
+            2,
+            0
+        ],
+        "name": "Fahad",
+        "decisions": [
+            [
+                true,
+                false,
+                false,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                true
+            ],
+            [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                false,
+                true
+            ]
+        ],
+        "age": 29
+    },
+    {
+        "gender": "m",
+        "conditionOrder": [
+            2,
+            0,
+            1
+        ],
+        "name": "Zain",
+        "decisions": [
+            [
+                false,
+                false,
+                false,
+                false,
+                true,
+                true,
+                true,
+                true
+            ],
+            [
+                false,
+                false,
+                false,
+                true,
+                true,
+                false,
+                true,
+                true,
+                true,
+                true
+            ],
+            [
+                true,
+                false,
+                false,
+                false,
+                false,
+                true,
+                true,
+                true,
+                true
+            ]
+        ],
+        "age": 30
+    },
+    {
+        "gender": "m",
+        "conditionOrder": [
+            2,
+            1,
+            0
+        ],
+        "name": "Imran",
+        "decisions": [
+            [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            [
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            [
+                false,
+                true,
+                true,
+                true,
+                true,
+                false,
+                true,
+                false,
+                false,
+                false
+            ]
+        ],
+        "age": 32
+    }
+]}

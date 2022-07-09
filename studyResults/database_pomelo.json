@@ -1,0 +1,272 @@
+{"participants": [
+    {
+        "gender": "f",
+        "conditionOrder": [
+            0,
+            1,
+            2
+        ],
+        "name": "gladius",
+        "decisions": [
+            [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            [
+                false,
+                false,
+                false,
+                true,
+                false,
+                false,
+                false,
+                false
+            ]
+        ],
+        "age": 21
+    },
+    {
+        "gender": "f",
+        "conditionOrder": [
+            0,
+            2,
+            1
+        ],
+        "name": "Tom Gill",
+        "decisions": [
+            [
+                true,
+                true,
+                true,
+                true,
+                true,
+                false,
+                false,
+                true,
+                true,
+                true
+            ],
+            [
+                true,
+                false,
+                true,
+                false,
+                false,
+                true,
+                false,
+                false
+            ],
+            [
+                true,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        ],
+        "age": 27
+    },
+    {
+        "gender": "f",
+        "conditionOrder": [
+            1,
+            0,
+            2
+        ],
+        "name": "Shirin",
+        "decisions": [
+            [
+                false,
+                false,
+                false,
+                false,
+                false,
+                true,
+                false,
+                false,
+                false
+            ],
+            [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            [
+                true,
+                true,
+                true,
+                true,
+                true,
+                false,
+                true,
+                false
+            ]
+        ],
+        "age": 22
+    },
+    {
+        "gender": "m",
+        "conditionOrder": [
+            1,
+            2,
+            0
+        ],
+        "name": "God",
+        "decisions": [
+            [
+                true,
+                true,
+                true,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+            ]
+        ],
+        "age": 24
+    },
+    {
+        "gender": "m",
+        "conditionOrder": [
+            2,
+            0,
+            1
+        ],
+        "name": "Werner",
+        "decisions": [
+            [
+                false,
+                false,
+                true,
+                false,
+                false,
+                true,
+                false,
+                false
+            ],
+            [
+                false,
+                false,
+                true,
+                true,
+                false,
+                true,
+                true,
+                false,
+                false,
+                true
+            ],
+            [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ]
+        ],
+        "age": 49
+    },
+    {
+        "gender": "m",
+        "conditionOrder": [
+            2,
+            1,
+            0
+        ],
+        "name": "Deadpool",
+        "decisions": [
+            [
+                false,
+                false,
+                true,
+                false,
+                false,
+                true,
+                true,
+                false
+            ],
+            [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            [
+                false,
+                false,
+                true,
+                true,
+                false,
+                true,
+                true,
+                false,
+                false,
+                true
+            ]
+        ],
+        "age": 24
+    }
+]}
